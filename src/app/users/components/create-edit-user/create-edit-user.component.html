@@ -1,11 +1,11 @@
 <form [formGroup]="userForm" (ngSubmit)="handleSubmit()">
     
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput id="name" type="text" formControlName="name" required>
+  </mat-form-field>
   
-      <mat-label>Name</mat-label>
-      <input matInput id="name" type="text" formControlName="name" required>
-  
-  
-  <mat-checkbox id="active" formControlName="active" >Active</mat-checkbox>
+    <mat-checkbox id="active" formControlName="active" >Active</mat-checkbox>
   
   <button type="submit" mat-raised-button  [disabled]="!userForm.valid">Submit</button>
 </form>

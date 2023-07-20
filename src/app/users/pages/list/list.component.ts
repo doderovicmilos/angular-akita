@@ -31,7 +31,7 @@ export class ListComponent {
   }
 
   toggleActive(user: User){
-    this.usersService.update(user.id, {...user, active: !user.active});
+    if(user.id)this.usersService.update(user.id, {...user, active: !user.active});
   }
 
   deleteUser(id: number){
