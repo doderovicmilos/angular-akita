@@ -4,7 +4,8 @@ import { User } from 'src/app/users/store/user.model';
 import { UsersQuery } from 'src/app/users/store/user.query';
 import { UsersService } from 'src/app/users/store/user.service';
 import { UsersStore } from 'src/app/users/store/users.store';
-
+import { MatDialog } from '@angular/material/dialog';
+import { CreateEditUserComponent } from 'src/app/users/components/create-edit-user/create-edit-user.component';
 
 @Component({
   selector: 'app-list',
@@ -17,7 +18,7 @@ export class ListComponent {
   displayAddUser: boolean = false;
   displayAddUserSub: Subscription | undefined;
 
-  constructor(private usersService: UsersService){ }
+  constructor(private usersService: UsersService, public dialog: MatDialog){ }
 
   areActiveLacking(users: User[]): boolean{
     return users.filter(it => it.active).length < 5
@@ -39,6 +40,10 @@ export class ListComponent {
 
   showAddUserForm(){
 
+  }
+
+  openDialog(){
+    this.dialog.open(CreateEditUserComponent);
   }
 
   ngOnDestroy(): void {
