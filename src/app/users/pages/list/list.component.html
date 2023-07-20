@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Active</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users$ | async">
+        <td>{{ user.name }}</td>
+        <td>{{ user.active }}</td>
+        <td>
+          <button (click)="toggleActive(user)" class="btn btn-primary btn-sm" style="margin: 5px">Toggle active</button>
+          <button (click)="deleteUser(user.id)" class="btn btn-danger" style="margin: 5px">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button *ngIf="displayAddUser" (click)="showAddUserForm()" class="btn btn-primary" style="margin: 5px">Update</button>
+
+</div>
