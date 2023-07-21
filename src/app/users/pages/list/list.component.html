@@ -15,8 +15,8 @@
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let element">
         <div class="action-buttons-container">
-          <button (click)="toggleActive(element)" mat-raised-button color="primary">Toggle active</button>
-          <button (click)="deleteUser(element.id)" mat-raised-button  color="warn">Delete</button>
+          <button (click)="toggleActive(element)" mat-button color="primary">Toggle active</button>
+          <button (click)="deleteUser(element.id)" mat-button  color="warn">Delete</button>
         </div>
       </td>
     </ng-container>
