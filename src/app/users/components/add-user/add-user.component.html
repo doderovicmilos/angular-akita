@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 mat-dialog-title>Add User</h2>
+
+  <mat-dialog-content [formGroup]="userForm" class="dialog-content">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput id="name" type="text" formControlName="name" required>
+    </mat-form-field>
+    <mat-checkbox id="active" formControlName="active" color="primary">Active</mat-checkbox>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="actions">
+    <button mat-raised-button (click)="close()">Close</button>
+    <button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="handleSubmit()">Submit</button>
+  </mat-dialog-actions>
+</div>

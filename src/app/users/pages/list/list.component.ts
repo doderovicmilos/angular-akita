@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { Observable, Subject, filter, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { User } from 'src/app/users/store/user.model';
-import { UsersQuery } from 'src/app/users/store/user.query';
 import { UsersService } from 'src/app/users/store/user.service';
-import { UsersStore } from 'src/app/users/store/users.store';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule, MatDialogConfig} from '@angular/material/dialog';
-import { CreateEditUserComponent } from 'src/app/users/components/create-edit-user/create-edit-user.component';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { AddUserComponent } from 'src/app/users/components/add-user/add-user.component';
 
 @Component({
   selector: 'app-list',
@@ -43,7 +41,7 @@ export class ListComponent {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    this.dialog.open(CreateEditUserComponent, dialogConfig);
+    this.dialog.open(AddUserComponent, dialogConfig);
   }
 
   ngOnDestroy(): void {

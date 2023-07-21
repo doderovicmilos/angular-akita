@@ -11,11 +11,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 @NgModule({
   declarations: [
     ListComponent,
-    CreateEditUserComponent
+    CreateEditUserComponent,
+    AddUserComponent
   ],
   imports: [
     CommonModule,
