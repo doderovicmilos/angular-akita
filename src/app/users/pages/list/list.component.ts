@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/users/store/user.model';
 import { UsersService } from 'src/app/users/store/user.service';
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddUserComponent } from 'src/app/users/components/add-user/add-user.component';
 
 @Component({
