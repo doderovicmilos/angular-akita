@@ -8,42 +8,42 @@ export function getInitialUsers() {
   return [
    {
       id:0,
-      name: 'Mile',
+      name: 'Dewey',
       active: true
     },
    {
       id:1, 
-      name: 'Lale',
+      name: 'Simon',
       active: true
     },
     {
       id:2, 
-      name: 'Pera',
+      name: 'Kira',
       active: true
     },
     {
       id:3,
-      name: 'Panta',
+      name: 'Taylor',
       active: true
     },
     {
       id:4,
-      name: 'Misko',
+      name: 'Miles',
       active: false
     },
     {
       id:5,
-      name: 'Krki',
+      name: 'Andrew',
       active: false
     },
     {
       id:6,
-      name: 'Rile',
+      name: 'Brandon',
       active: false
     },
     {
       id:7,
-      name: 'Kale',
+      name: 'Edwin',
       active: false
     }
   ];
