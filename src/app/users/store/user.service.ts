@@ -10,12 +10,16 @@ export class UsersService {
 
   constructor(private productsStore: UsersStore, private usersQuery: UsersQuery ) {}
 
+  getNextId(): number {
+    return this.usersQuery.getAll().map(it => it.id).reduce((a,b)=>(a > b) ? a : b) + 1;
+  }
+
   selectAll(): Observable<User[]> {
     return this.usersQuery.selectAll();
   }
 
   add(product: any) {
-    const id =  this.usersQuery.getAll().map(it => it.id).reduce((a,b)=>(a > b) ? a : b) + 1;
+    const id = this.getNextId();
     this.productsStore.add({id, ...product});
   }
 
