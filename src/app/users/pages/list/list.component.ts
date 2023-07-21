@@ -4,7 +4,7 @@ import { User } from 'src/app/users/store/user.model';
 import { UsersQuery } from 'src/app/users/store/user.query';
 import { UsersService } from 'src/app/users/store/user.service';
 import { UsersStore } from 'src/app/users/store/users.store';
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule, MatDialogConfig} from '@angular/material/dialog';
 import { CreateEditUserComponent } from 'src/app/users/components/create-edit-user/create-edit-user.component';
 
 @Component({
@@ -15,6 +15,7 @@ import { CreateEditUserComponent } from 'src/app/users/components/create-edit-us
 export class ListComponent {
 
   users$ = this.usersService.selectAll();
+  displayedColumns= ['name', 'active', "actions"];
   displayAddUser: boolean = false;
   displayAddUserSub: Subscription | undefined;
 
@@ -39,11 +40,10 @@ export class ListComponent {
   }
 
   showAddUserForm(){
-
-  }
-
-  openDialog(){
-    this.dialog.open(CreateEditUserComponent);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    this.dialog.open(CreateEditUserComponent, dialogConfig);
   }
 
   ngOnDestroy(): void {

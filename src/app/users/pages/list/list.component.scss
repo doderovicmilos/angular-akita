@@ -1,0 +1,25 @@
+.container {
+  width: 900px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  th{
+    &:last-child{
+      text-align: center;
+    }
+  }
+  td {
+    &:last-child{
+      width: 300px;
+      .action-buttons-container {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+  }
+}

@@ -1,27 +1,32 @@
 <div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Active</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users$ | async">
-        <td>{{ user.name }}</td>
-        <td>{{ user.active }}</td>
-        <td>
-          <button (click)="toggleActive(user)" class="btn btn-primary btn-sm" style="margin-right: 5px">Toggle active</button>
-          <button (click)="deleteUser(user.id)" class="btn btn-danger btn-sm" style="margin-right: 5px">Delete</button>
-        </td>
-      </tr>
-    </tbody>
+  <table mat-table [dataSource]="users$" class="mat-elevation-z3">
+    
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let element"> {{element.active ? 'Active' : 'Inactive'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="action-buttons-container">
+          <button (click)="toggleActive(element)" class="btn btn-primary btn-sm" style="margin-right: 5px">Toggle active</button>
+          <button (click)="deleteUser(element.id)" class="btn btn-danger btn-sm" style="margin-right: 5px">Delete</button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+
   </table>
 
-  <!-- <button *ngIf="displayAddUser" (click)="showAddUserForm()" class="btn btn-primary" style="margin: 5px">Update</button> -->
-
-
-  <button mat-raised-button (click)="openDialog()">Add user</button>
-
+  <div class="button-container">
+    <button *ngIf="displayAddUser" mat-raised-button (click)="showAddUserForm()">Add user</button>
+  </div>
 </div>
