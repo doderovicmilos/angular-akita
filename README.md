@@ -2,9 +2,20 @@
 
 Basic Angular and Akita CRUD aplication.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+Once started app will be accessible on http://localhost:4200/
 
-## Development server
+## Prereqiusites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+Before starting make sure you have NodeJs and NPM installed on machine.
 
+## Installation
+
+```bash
+git clone https://github.com/doderovicmilos/angular-akita.git
+cd angular-akita
+npm install
+npm start
+
+```
+
+Navigate to `http://localhost:4200/`.
